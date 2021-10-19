@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">cakecontest</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="inscr_bete">Inscríbete</string>
+    <string name="introduce_el_nombre_del_concurso">introduce el nombre del concurso</string>
+    <string name="si">Si</string>
+    <string name="no">no</string>
+    <string name="has_participado_en_otro_concurso">¿Has participado en otro concurso?</string>
+    <string name="tu_edad">Tu edad</string>
+    <string name="edad">Edad: (solo mayores de 18 años)</string>
+    <string name="mujer">Mujer</string>
+    <string name="hombre">Hombre</string>
+    <string name="genero">Genero:</string>
+    <string name="introduce_tu_apelido">Introduce tu apelido</string>
+    <string name="apellido">Apellido:</string>
+    <string name="introduce_tu_nombre">Introduce tu nombre</string>
+    <string name="nombre">Nombre:</string>
+    <string name="el_come_tartas_cev_2020">El Cometartas CEV 2020</string>
+    <string name="todo">TODO</string>
+</resources>

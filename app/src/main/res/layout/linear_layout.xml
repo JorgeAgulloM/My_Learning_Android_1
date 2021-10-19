@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--- Layout principal del tipo linear -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGround">
+
+    <!--- Etiqueta para visualziar el texto de cabecera -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/el_come_tartas_cev_2020"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:background="@color/teal_700"/>
+
+    <!--- Imagen de de etrada a la App -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/cupcacke"
+        android:contentDescription="@string/todo" />
+
+    <!--- Inicio del layout para la agrupación de objetos del cuestionario -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--- Etiqueta del contenedor para escribir la edad -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_light_background"
+            android:text="@string/edad"
+            android:textSize="15sp"/>
+
+        <!--- Cajón de escritura para la edad -->
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:hint="@string/tu_edad"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:inputType="number"
+            android:onClick="onWhite"
+            android:autofillHints="" />
+
+        <!--- Etiqueta del contenedor para escribir el nombre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_light_background"
+            android:text="@string/nombre"
+            android:textSize="15sp"/>
+
+        <!--- Cajón de escritura para el nombre -->
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/introduce_tu_nombre"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:onClick="onWhite"
+            android:autofillHints=""
+            android:inputType="text" />
+
+        <!--- Etiqueta del contenedor para escribir el apellido -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_light_background"
+            android:text="@string/apellido"
+            android:textSize="15sp"/>
+
+        <!--- Cajón de escritura para el apellido -->
+        <EditText
+            android:id="@+id/secName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/introduce_tu_apelido"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:onClick="onWhite"
+            android:autofillHints=""
+            android:inputType="text" />
+
+        <!--- Agrupación para los radioButton. Al agruparlos, solo se puede seleccionar uno -->
+        <RadioGroup
+            android:id="@+id/groupGenter"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:onClick="onWhite">
+
+            <!--- Etiqueta del contenedor de los radioButton para seleccionar el sexo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cardview_light_background"
+                android:text="@string/genero"
+                android:textSize="15sp"/>
+
+            <!--- RadioButton àra seleccionar el sexo masculino -->
+            <RadioButton
+                android:id="@+id/radioMan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hombre"
+                android:textSize="15sp"
+                android:textColor="@color/cardview_light_background"
+                android:onClick="onWhite"/>
+
+            <!--- RadioButton àra seleccionar el sexo femenino -->
+            <RadioButton
+                android:id="@+id/radioWoman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mujer"
+                android:textSize="15sp"
+                android:textColor="@color/cardview_light_background"
+                android:onClick="onWhite"/>
+
+        </RadioGroup>
+
+        <!--- LAyout de rejilla para contener la etiqueta con la pregunta
+        y el botón tipo switch en linea -->
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <!--- Etiqueta donde mostrar la pregunta al usuario sobre otros concursos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cardview_light_background"
+                android:gravity="center"
+                android:text="@string/has_participado_en_otro_concurso"
+                android:textSize="12sp"
+                android:onClick="onWhite"/>
+
+            <!--- Botón tipo switch para responder si o no la pregunta y hacer que aparezca
+             un nuevo EditText-->
+            <ToggleButton
+                android:id="@+id/toggle"
+                android:layout_width="50dp"
+                android:layout_height="38dp"
+                android:textOn="@string/si"
+                android:textOff="@string/no"
+                android:textSize="12sp"
+                android:onClick="yesContest"/>
+
+
+        </GridLayout>
+
+        <!--- Cajón de escritura para el anterior concurso -->
+        <EditText
+            android:id="@+id/contest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="@string/introduce_el_nombre_del_concurso"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:onClick="onWhite"
+            android:autofillHints=""
+            android:inputType="text" />
+
+        <!--- FIN del layout para la agrupación de objetos del cuestionario -->
+    </GridLayout>
+
+    <!--- Botón principal, se usa para entrar al cuestionario y para finalizarlo -->
+    <Button
+        android:id="@+id/enroll"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:text="@string/inscr_bete"
+        android:textSize="15sp"
+        android:onClick="dataPlayer"/>
+
+    <!--- Botón para cancelar la inscripción -->
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:text="@string/cancelar"
+        android:textSize="12sp"
+        android:onClick="cancel"/>
+
+</LinearLayout>
